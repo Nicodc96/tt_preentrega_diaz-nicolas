@@ -111,6 +111,7 @@ public class ControladorPedido {
                     System.out.println("¡Pedido creado exitosamente!");
                     return true;
                 case 9:
+                    Pedido.idGenerado--;
                     System.out.println("Se ha cancelado la operación.");
                     return false;
             }
