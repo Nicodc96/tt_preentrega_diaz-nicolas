@@ -264,17 +264,16 @@ public class ControladorProducto {
                 return;
             }
 
-            Producto productoAEliminar = buscarProducto(scanner, listaDeProductos, "eliminar");            
-            if (Objects.isNull(productoAEliminar)) return;
-            StringBuilder sBInfoProductos = new StringBuilder();
-
+            StringBuilder sBInfoProductos = new StringBuilder();            
             for (Producto producto : listaDeProductos) { // Genero un string con una breve info de cada producto
                 sBInfoProductos
-                    .append(String.format("- Nombre: %s | ID: %d", producto.getNombre(), producto.getId()))
-                    .append(System.lineSeparator());
-            }
-
+                .append(String.format("- Nombre: %s | ID: %d", producto.getNombre(), producto.getId()))
+                .append(System.lineSeparator());
+            }            
             System.out.println(sBInfoProductos.toString());
+
+            Producto productoAEliminar = buscarProducto(scanner, listaDeProductos, "eliminar");            
+            if (Objects.isNull(productoAEliminar)) return;
 
             String datoIngresado = "";
             System.out.printf("""
@@ -321,5 +320,19 @@ public class ControladorProducto {
             return true;
         }
         return false;
+    }
+
+    public static void hardcodearProductos(List<Producto> listaProductos){
+        Producto p1 = new Producto("Caja de zapatos", Math.random() * 5000, "Una caja de zapatos grises");
+        Producto p2 = new Producto("Televisor de 42\"", Math.random() * 10000, "Smart-tv con hdr y v-sync incluido");
+        Producto p3 = new Producto("Remeras talle l x6", Math.random() * 3000, "Remeras de colores surtidos");
+        Producto p4 = new Producto("Medias elasticas x3", Math.random() * 500, "Pack de medias negras");
+        Producto p5 = new Producto("Guantes de trabajo", Math.random() * 800, "Para todo tipo de manualidad");
+
+        listaProductos.add(p1);
+        listaProductos.add(p2);
+        listaProductos.add(p3);
+        listaProductos.add(p4);
+        listaProductos.add(p5);
     }
 }

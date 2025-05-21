@@ -54,6 +54,11 @@ public class ControladorPedido {
                             break;
                         }
 
+                        if (pedidoAGenerar.getListaProductos().stream().anyMatch(p -> p.getId() == idIngresado)){
+                            System.out.println("**ERROR**, el producto del ID ingresado ya existe en el pedido.");
+                            break;
+                        }
+
                         pedidoAGenerar.agregarProducto(listaProductos.stream()
                                                                     .filter(p -> p.getId() == idIngresado)
                                                                     .toList()

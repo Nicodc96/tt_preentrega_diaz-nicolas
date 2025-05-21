@@ -30,7 +30,7 @@ public final class Pedido {
     }
 
     public String obtenerTotal() {
-        return "Total del pedido: $ " + this.listaDeProductos.stream().mapToDouble(p -> p.getPrecio()).sum();
+        return String.format("Total del pedido: $%.2f", this.listaDeProductos.stream().mapToDouble(p -> p.getPrecio()).sum());
     }
 
     public String mostrarPedidoId() {

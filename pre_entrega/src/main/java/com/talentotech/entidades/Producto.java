@@ -52,10 +52,10 @@ public class Producto {
 
     @Override
     public boolean equals(Object obj) {
-        if (Objects.isNull(this) || obj.getClass() == this.getClass())
-            return false;
         if (this == obj)
             return true;
+        if (this == null || obj.getClass() != this.getClass())
+            return false;
 
         Producto articuloAComparar = (Producto) obj;
         return this.getNombre().equalsIgnoreCase(articuloAComparar.getNombre()) || this.getId() == articuloAComparar.getId();

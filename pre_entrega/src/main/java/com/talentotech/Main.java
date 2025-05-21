@@ -14,6 +14,10 @@ public class Main {
     public static void main(String[] args) {
         String respuesta = "no";
         Scanner entradaDeDatos = new Scanner(System.in);
+
+        /* Descomentar esta línea para razones de testeo */
+        ControladorProducto.hardcodearProductos(listaDeProductosTotales);
+
         do{
             switch (Menu.menuDeOpciones(entradaDeDatos)) {
                 case 1 -> ControladorProducto.manejarAgregarProducto(entradaDeDatos, listaDeProductosTotales);
