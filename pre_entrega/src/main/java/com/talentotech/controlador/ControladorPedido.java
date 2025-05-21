@@ -54,12 +54,10 @@ public class ControladorPedido {
                             break;
                         }
 
-                        pedidoAGenerar
-                                .agregarProducto(listaProductos
-                                                    .stream()
-                                                    .filter(p -> p.getId() == idIngresado)
-                                                    .toList()
-                                                    .get(0));
+                        pedidoAGenerar.agregarProducto(listaProductos.stream()
+                                                                    .filter(p -> p.getId() == idIngresado)
+                                                                    .toList()
+                                                                    .get(0));
                         
                         System.out.println("Se ha agregado el producto al pedido correctamente.");
                         break;
@@ -88,12 +86,10 @@ public class ControladorPedido {
                             break;
                         }
 
-                        pedidoAGenerar.getListaProductos()
-                                .remove(pedidoAGenerar.getListaProductos()
-                                        .stream()
-                                        .filter(p -> p.getId() == idIngresado)
-                                        .toList().get(0)
-                                        );
+                        pedidoAGenerar.getListaProductos().remove(pedidoAGenerar.getListaProductos()
+                                                                                .stream()
+                                                                                .filter(p -> p.getId() == idIngresado)
+                                                                                .toList().get(0));
                         
                         System.out.println("Se ha quitado el producto del pedido correctamente.");
                     } catch (InputMismatchException e) {
